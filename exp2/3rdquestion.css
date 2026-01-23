@@ -1,0 +1,108 @@
+/* ---------- Page ---------- */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f4f8;
+    padding: 40px;
+}
+
+/* ---------- Container ---------- */
+.container {
+    max-width: 420px;
+    margin: auto;
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* ---------- Labels ---------- */
+label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* ---------- Inputs ---------- */
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 8px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+/* ---------- First input ---------- */
+input:first-of-type {
+    border-radius: 20px;
+}
+
+/* ---------- Focus ---------- */
+input:focus,
+textarea:focus {
+    border-color: #0077ff;
+    outline: none;
+}
+
+/* ---------- Invalid ---------- */
+input:invalid,
+select:invalid,
+textarea:invalid {
+    border-color: red;
+}
+
+/* ---------- Valid ---------- */
+input:valid,
+select:valid,
+textarea:valid {
+    border-color: green;
+}
+
+/* ---------- Radio Group ---------- */
+.radio-group {
+    margin-top: 20px;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+}
+
+.radio-group input[type="radio"] {
+    margin-right: 5px;
+}
+
+/* ---------- Radio Checked ---------- */
+.radio-group input[type="radio"]:checked {
+    accent-color: #0077ff;
+    box-shadow: 0 0 5px #0077ff;
+}
+
+/* Change label color when checked */
+.radio-group input[type="radio"]:checked + label {
+    color: #0077ff;
+    font-weight: bold;
+}
+
+/* ---------- Textarea ---------- */
+textarea {
+    resize: vertical;
+}
+
+/* ---------- Button ---------- */
+button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #0077ff;
+    color: white;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* ---------- Button Hover ---------- */
+button:hover {
+    background-color: #005bcc;
+}

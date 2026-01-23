@@ -1,0 +1,40 @@
+/* Body background */
+body {
+    background-color: #f4f4f4;
+    padding: 40px;
+    font-family: Arial, sans-serif;
+}
+
+/* Grid container */
+.color-grid {
+    display: flex;
+    gap: 15px;
+}
+
+/* Common color box styling */
+.color-box {
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+}
+
+/* Individual colors */
+.color1 {
+    background-color: #ff5733;        /* Hex */
+}
+
+.color2 {
+    background-color: rgb(52, 152, 219); /* RGB */
+}
+
+.color3 {
+    background-color: green;          /* Predefined color */
+}
+
+.color4 {
+    background-color: hsl(280, 60%, 60%); /* HSL */
+}
+
+.color5 {
+    background-color: orange;         /* Any valid color */
+}

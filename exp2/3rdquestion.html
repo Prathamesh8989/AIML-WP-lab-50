@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Job Application Form</title>
+
+    <!-- Link stylesheet -->
+    <link rel="stylesheet" href="3rdquestion.css">
+</head>
+<body>
+
+    <div class="container">
+        <form>
+
+            <!-- Full Name -->
+            <label for="name">Full Name</label>
+            <input type="text" id="name" required>
+
+            <!-- Email -->
+            <label for="email">Email Address</label>
+            <input type="email" id="email" required>
+
+            <!-- Position -->
+            <label for="position">Job Position</label>
+            <select id="position" required>
+                <option value="">Select a position</option>
+                <option value="developer">Developer</option>
+                <option value="designer">Designer</option>
+                <option value="manager">Manager</option>
+            </select>
+
+            <!-- Availability -->
+            <fieldset class="radio-group">
+                <legend>Availability</legend>
+
+                <input type="radio" id="fulltime" name="availability">
+                <label for="fulltime">Full-Time</label>
+
+                <input type="radio" id="parttime" name="availability">
+                <label for="parttime">Part-Time</label>
+            </fieldset>
+
+            <!-- Message -->
+            <label for="message">Message</label>
+            <textarea id="message" rows="4" required></textarea>
+
+            <!-- Submit -->
+            <button type="submit">Submit</button>
+
+        </form>
+    </div>
+
+</body>
+</html>
