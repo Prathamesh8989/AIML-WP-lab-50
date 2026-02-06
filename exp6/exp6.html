@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Experiment 6 - Form Validation</title>
+
+    <!-- Inline CSS -->
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+
+        input {
+            padding: 8px;
+            margin: 5px 0;
+            width: 250px;
+        }
+
+        button {
+            padding: 8px 15px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+
+        .dark {
+            background-color: #333;
+            color: white;
+        }
+    </style>
+</head>
+
+<body onload="loadUser(); loadTheme();">
+
+    <h2>JavaScript Form Validation</h2>
+
+    <!-- Email Validation -->
+    <label>Email:</label><br>
+    <input type="text" id="email">
+    <p id="emailError" class="error"></p>
+
+    <!-- Phone Validation -->
+    <label>Phone Number:</label><br>
+    <input type="text" id="phone">
+    <p id="phoneError" class="error"></p>
+
+    <!-- Password Validation -->
+    <label>Password:</label><br>
+    <input type="password" id="password">
+    <p id="passError" class="error"></p>
+
+    <br>
+    <button onclick="validateForm()">Validate</button>
+
+    <hr>
+
+    <h2>Local Storage</h2>
+
+    <label>Username:</label><br>
+    <input type="text" id="username">
+    <br>
+    <button onclick="saveUser()">Save Username</button>
+
+    <p id="displayUser"></p>
+
+    <hr>
+
+    <h2>Theme Preference</h2>
+    <button onclick="toggleTheme()">Toggle Theme</button>
+
+    <!-- JavaScript -->
+    <script>
+        function validateForm() {
+            let email = document.getElementById("email").value;
+            let phone = document.getElementById("phone").value;
+            let password = document.getElementById("password").value;
+
+            document.getElementById("emailError").innerText = "";
+            document.getElementById("phoneError").innerText = "";
+            document.getElementById("passError").innerText = "";
+
+            // Email validation
+            if (!email.includes("@")) {
+                document.getElementById("emailError").innerText =
+                    "Invalid email (must contain @)";
+            }
+
+            // Phone validation
+            if (phone.length !== 10 || isNaN(phone)) {
+                document.getElementById("phoneError").innerText =
+                    "Phone number must be 10 digits";
+            }
+
+            // Password validation
+            if (password.length < 6) {
+                document.getElementById("passError").innerText =
+                    "Password must be at least 6 characters";
+            }
+        }
+
+        // Local Storage - Save Username
+        function saveUser() {
+            let user = document.getElementById("username").value;
+            localStorage.setItem("username", user);
+            displayUser();
+        }
+
+        function loadUser() {
+            displayUser();
+        }
+
+        function displayUser() {
+            let user = localStorage.getItem("username");
+            if (user) {
+                document.getElementById("displayUser").innerText =
+                    "Stored Username: " + user;
+            }
+        }
+
+        // Theme Toggle with Local Storage
+        function toggleTheme() {
+            document.body.classList.toggle("dark");
+
+            if (document.body.classList.contains("dark")) {
+                localStorage.setItem("theme", "dark");
+            } else {
+                localStorage.setItem("theme", "light");
+            }
+        }
+
+        function loadTheme() {
+            let theme = localStorage.getItem("theme");
+            if (theme === "dark") {
+                document.body.classList.add("dark");
+            }
+        }
+    </script>
+
+</body>
+</html>

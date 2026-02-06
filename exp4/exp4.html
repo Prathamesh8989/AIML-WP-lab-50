@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Experiment 4</title>
+
+    <!-- Inline CSS -->
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+        button {
+            padding: 8px 15px;
+            margin: 5px;
+            cursor: pointer;
+        }
+        p {
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body onload="welcome()">
+
+    <h2>JavaScript Basics & Events</h2>
+
+    <button onclick="showMsg()">Click Me</button>
+    <button onclick="changeText()">Change Text</button>
+    <button onclick="greet()">Greet</button>
+
+    <p id="text">Original Text</p>
+
+    <script>
+        function welcome() {
+            alert("Welcome to JavaScript");
+        }
+
+        let name = "Amit";
+        let age = 19;
+        alert("Name: " + name + "\nAge: " + age);
+
+        function showMsg() {
+            alert("Button Clicked");
+        }
+
+        function changeText() {
+            document.getElementById("text").innerText = "Text Changed Successfully";
+        }
+
+        function greet() {
+            let hour = new Date().getHours();
+            if (hour < 12)
+                alert("Good Morning");
+            else
+                alert("Good Evening");
+        }
+    </script>
+
+</body>
+</html>

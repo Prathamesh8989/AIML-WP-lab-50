@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DOM Basics & To-Do List Preparation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    button {
+      margin: 5px 0;
+    }
+    hr {
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>DOM Basics & Preparation for To-Do List</h1>
+
+  <!-- Exercise 3: Accessing Elements -->
+  <h2>Exercise 3: Accessing Elements</h2>
+  <p id="para">This is original text</p>
+  <button onclick="changeText()">Change Text</button>
+
+  <hr>
+
+  <!-- Exercise 4: Creating Elements Dynamically -->
+  <h2>Exercise 4: Creating Elements Dynamically</h2>
+  <button onclick="addParagraph()">Add Paragraph</button>
+
+  <hr>
+
+  <!-- Exercise 5: Removing Elements -->
+  <h2>Exercise 5: Removing Elements</h2>
+  <p id="removePara">This paragraph will be removed</p>
+  <button onclick="removeElement()">Remove Paragraph</button>
+
+  <hr>
+
+  <!-- Exercise 6: Event Listener -->
+  <h2>Exercise 6: Event Listener</h2>
+  <button id="eventBtn">Click Me</button>
+
+  <hr>
+
+  <!-- Exercise 7: Input Handling -->
+  <h2>Exercise 7: Input Handling</h2>
+  <input type="text" id="inputText" placeholder="Enter text">
+  <button onclick="displayText()">Display</button>
+  <p id="output"></p>
+
+  <hr>
+
+  <!-- Exercise 8: Simple Task Addition Logic -->
+  <h2>Exercise 8: Simple Task Addition (To-Do Logic)</h2>
+  <input type="text" id="taskInput" placeholder="Enter task">
+  <button onclick="addTask()">Add Task</button>
+
+  <ul id="taskList"></ul>
+
+  <script>
+    // Exercise 3
+    function changeText() {
+      document.getElementById("para").innerText = "Text has been changed!";
+    }
+
+    // Exercise 4
+    function addParagraph() {
+      let p = document.createElement("p");
+      p.innerText = "This is a dynamically added paragraph";
+      document.body.appendChild(p);
+    }
+
+    // Exercise 5
+    function removeElement() {
+      document.getElementById("removePara").remove();
+    }
+
+    // Exercise 6
+    document.getElementById("eventBtn").addEventListener("click", function () {
+      alert("Button was clicked!");
+    });
+
+    // Exercise 7
+    function displayText() {
+      let text = document.getElementById("inputText").value;
+      document.getElementById("output").innerText = text;
+    }
+
+    // Exercise 8
+    function addTask() {
+      let task = document.getElementById("taskInput").value;
+      if (task !== "") {
+        let li = document.createElement("li");
+        li.innerText = task;
+        document.getElementById("taskList").appendChild(li);
+        document.getElementById("taskInput").value = "";
+      }
+    }
+  </script>
+
+</body>
+</html>
